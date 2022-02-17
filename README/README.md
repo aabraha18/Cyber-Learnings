@@ -25,7 +25,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound requests to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_  
-       -Load Balancers protect a system from potential DoS attacks by evenly distributing web traffic across multiple servers.
+       -Load Balancers protect a system from potential attacks by evenly distributing web traffic across multiple servers.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 - _TODO: What does Filebeat watch for?_ 
@@ -53,7 +53,7 @@ Only the jumpbox machine can accept connections from the Internet. Access to thi
 
 Machines within the network can only be accessed by the workstation and internet.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ 
-          -Allowed the Jump box machine access to the ELK VM with IP address: 10.0.0.4
+          -Allowed the Jump box machine with the ansible container to have access to the ELK VM with IP address: 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
