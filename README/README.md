@@ -8,7 +8,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-[ELK-playbook.yml](https://github.com/aabraha18/Cyber-Learnings/blob/50efadadd7844007f716a3484b8e72171bbb7315/Ansible/elk-playbook.yml)
+- [Ansible.cfg](https://github.com/aabraha18/Cyber-Learnings/blob/c38061595dee4ad2cf9e9d2f4da8d3e296b9ff5d/Ansible/ansible.cfg)
+- [ELK-playbook.yml](https://github.com/aabraha18/Cyber-Learnings/blob/50efadadd7844007f716a3484b8e72171bbb7315/Ansible/elk-playbook.yml)
+- [Filebeat-playbook.yml](https://github.com/aabraha18/Cyber-Learnings/blob/c38061595dee4ad2cf9e9d2f4da8d3e296b9ff5d/Ansible/file-beat.yml)
+- [Metricbeat-playbook.yml](https://github.com/aabraha18/Cyber-Learnings/blob/c38061595dee4ad2cf9e9d2f4da8d3e296b9ff5d/Ansible/metricbeat-config.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -25,13 +28,13 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound requests to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_  
-       -Load Balancers protect a system from potential attacks by evenly distributing web traffic across multiple servers.
+        - Load Balancers protect a system from potential attacks by evenly distributing web traffic across multiple servers.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 - _TODO: What does Filebeat watch for?_ 
-      -Filebeat collects data about the file system.
+      - Filebeat collects data about the file system.
 - _TODO: What does Metricbeat record?_ 
-      -Metricbeat records machine metrics and statistics.
+      - Metricbeat records machine metrics and statistics.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -53,7 +56,7 @@ Only the jumpbox machine can accept connections from the Internet. Access to thi
 
 Machines within the network can only be accessed by the workstation and internet.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ 
-          -Allowed the Jump box machine with the ansible container to have access to the ELK VM with IP address: 10.0.0.4
+          - Allowed the Jump box machine with the ansible container to have access to the ELK VM with IP address: 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
@@ -100,6 +103,9 @@ SSH into the control node and follow the steps below:
 - Copy the filebeat-config.yml file and metricbeat-config.yml file to the /etc/ansible/files/ directory.
 - Update the filebeat-config.yml file and metricbeat-config.yml file to include the ELK IP 10.1.0.4 on ports 5601 and 9200.
 - Run the playbook, and navigate to Kibana > Docker Metrics > Module status > Check data to check that the installation worked as expected.
+
+- [Filebeat-config.yml](https://github.com/aabraha18/Cyber-Learnings/blob/c38061595dee4ad2cf9e9d2f4da8d3e296b9ff5d/Ansible/filebeat-config.yml)
+- [Metricbeat-config.yml](https://github.com/aabraha18/Cyber-Learnings/blob/c38061595dee4ad2cf9e9d2f4da8d3e296b9ff5d/Ansible/metricbeat-config.yml) 
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_ The Elk-playbook.yml file is the playbook located in the /etc/ansible/ directory. 
